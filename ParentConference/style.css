@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: midnightblue;
+    color: whitesmoke;
+    padding: 20px;
+    font-size: 16px;
+}
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #ffffff1a;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px black;
+}
+
+.center {
+    text-align: center;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+fieldset {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+fieldset legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0 10px;
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+/* Para hacer que se apilen verticalmente (excepto tus etiquetas de botones de opción), usa la pseudo-clase :not().
+
+La pseudo-clase :not() niega una selección. Aquí, selecciona todos los elementos label que no tienen la clase contact-method. */
+
+label:not(.contact-method) {
+    display: block;
+    margin: 10px 0;
+}
+
+/*
+La parte :not(.contact-method-radio-btn) excluye los botones de opción con esa clase de ser estilizados por esta regla. De esta manera, podemos aplicar estilos generales a la mayoría de los inputs mientras mantenemos los botones de opción separados.
+
+Estos estilos harán que los campos de tu formulario sean más anchos y fáciles de leer. Prueba previsualizar el formulario para ver cómo cambia la estructura.
+*/
+input:not(.contact-method-radio-btn),
+textarea {
+    background-color: #ffffff1a;
+    width: 95%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input, input::placeholder, textarea{
+    color: whitesmoke;
+}
+
+.contact-method-radio-btn {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    /*Por defecto, los elementos de formulario como los botones de opción pueden no estar perfectamente alineados con sus etiquetas, especialmente si el texto de la etiqueta es más alto o tiene configuraciones de fuente diferentes.
+
+    Para alinear los botones de opción verticalmente con sus etiquetas, puedes usar la propiedad vertical-align. Esta propiedad controla cómo los elementos en línea o en línea-bloque se alinean verticalmente con el texto circundante.*/
+    vertical-align: bottom;
+}
+
+.contact-method-radio-btn::before {
+    display: block;
+    content: " ";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(3px, 3px) scale(0);
+    transition: all 0.3s ease-in;
+}
+
+.contact-method-radio-btn:checked::before {
+    background-color: lightgreen;
+    transform: translate(3px, 3px) scale(1);
+}
+
+.submit-btn {
+    cursor: pointer;
+    background-color: royalblue;
+    color: whitesmoke;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 1.1rem;
+    display: block;
+    margin: auto;
+}
+
+.submit-btn:hover{
+    background-color: midnightblue;
+    transition: background-color 0.3s ease-in-out;
+}
