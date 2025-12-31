@@ -44,3 +44,18 @@ input[type="checkbox"] {
     background-color: white;
     transition: all 0.3s;
 }
+
+input[type="checkbox"]:checked {
+    background-color: #f1be32;
+    border-color: #e2a60d;
+}
+
+input[type="checkbox"]:checked::after {
+    content : "✓";
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease-in;
+    font-weight: bold;
+    color: white;
+    line-height: 20px;
+}
